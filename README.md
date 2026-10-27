@@ -1,4 +1,4 @@
-# SIADS-611-Database-Architecture-and-Technologies
+# SIADS 611 Database Architecture and Technologies
 
 ## Course Overview
 This course will cover advanced techniques in representing and indexing data in JSON and full-text fields.  We will also review and cover the performance of database operations across all types of SQL queries. We also compare and contrast relational and non-relational approaches to database and discuss when to use various different database technologies.
