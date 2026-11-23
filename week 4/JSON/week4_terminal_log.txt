@@ -1,0 +1,827 @@
+labsuser@jupyter:/voc$ psql -h pg.pg4e.com -p 5432 -U pg4e_be9e729093 -d readonly -W
+Password: 
+psql: error: connection to server at "pg.pg4e.com" (3.101.11.254), port 5432 failed: FATAL:  password authentication failed for user "pg4e_be9e729093"
+connection to server at "pg.pg4e.com" (3.101.11.254), port 5432 failed: FATAL:  password authentication failed for user "pg4e_be9e729093"
+labsuser@jupyter:/voc$ psql -h pg.pg4e.com -p 5432 -U pg4e_be9e729093 -d readonly -W
+Password: 
+psql: error: connection to server at "pg.pg4e.com" (3.101.11.254), port 5432 failed: FATAL:  password authentication failed for user "pg4e_be9e729093"
+connection to server at "pg.pg4e.com" (3.101.11.254), port 5432 failed: FATAL:  password authentication failed for user "pg4e_be9e729093"
+labsuser@jupyter:/voc$ psql -h pg.pg4e.com -p 5432 -U pg4e_be9e729093 -d readonly -W
+Password: 
+psql: error: connection to server at "pg.pg4e.com" (3.101.11.254), port 5432 failed: FATAL:  password authentication failed for user "pg4e_be9e729093"
+connection to server at "pg.pg4e.com" (3.101.11.254), port 5432 failed: FATAL:  password authentication failed for user "pg4e_be9e729093"
+labsuser@jupyter:/voc$ psql -h pg.pg4e.com -p 5432 -U pg4e_da795b0640 pg4e_da795b0640
+Password for user pg4e_da795b0640: 
+psql (17.10 (Debian 17.10-0+deb13u1), server 11.7 (Ubuntu 11.7-2.pgdg18.04+1))
+SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384, compression: off, ALPN: none)
+Type "help" for help.
+
+pg4e_da795b0640=> SELECT COUNT(*) FROM pokeapi;
+ count 
+-------
+   100
+(1 row)
+
+pg4e_da795b0640=> \q
+labsuser@jupyter:/voc$ python load_missing_pokemon.py
+python: can't open file '/voc/load_missing_pokemon.py': [Errno 2] No such file or directory
+labsuser@jupyter:/voc$ python load_missing_pokemon.py
+python: can't open file '/voc/load_missing_pokemon.py': [Errno 2] No such file or directory
+labsuser@jupyter:/voc$ python load_missing_pokemon.py
+python: can't open file '/voc/load_missing_pokemon.py': [Errno 2] No such file or directory
+labsuser@jupyter:/voc$ cd /voc/work/week4 && python load_missing_pokemon.py
+Traceback (most recent call last):
+  File "/voc/work/week4/load_missing_pokemon.py", line 43, in <module>
+    main()
+  File "/voc/work/week4/load_missing_pokemon.py", line 9, in main
+    conn = psycopg2.connect(
+           ^^^^^^^^^^^^^^^^^
+  File "/opt/python/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: connection to server at "pg.pg4e.com" (3.101.11.254), port 5432 failed: FATAL:  password authentication failed for user "pg4e_be9e729093"
+connection to server at "pg.pg4e.com" (3.101.11.254), port 5432 failed: FATAL:  password authentication failed for user "pg4e_be9e729093"
+
+labsuser@jupyter:~/week4$ python -c "import hidden; s = hidden.secrets(); print(hidden.__file__); print(s['user'], s['database'])"
+/voc/work/week4/hidden.py
+pg4e_be9e729093 pg4e_be9e729093
+labsuser@jupyter:~/week4$ python -c "import hidden; s = hidden.secrets(); print(hidden.__file__); print(s['user'], s['database'])"
+/voc/work/week4/hidden.py
+pg4e_da795b0640 pg4e_da795b0640
+labsuser@jupyter:~/week4$ python load_missing_pokemon.py
+Traceback (most recent call last):
+  File "/voc/work/week4/load_missing_pokemon.py", line 43, in <module>
+    main()
+  File "/voc/work/week4/load_missing_pokemon.py", line 9, in main
+    conn = psycopg2.connect(
+           ^^^^^^^^^^^^^^^^^
+  File "/opt/python/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: connection to server at "pg.pg4e.com" (3.101.11.254), port 5432 failed: FATAL:  password authentication failed for user "pg4e_da795b0640"
+connection to server at "pg.pg4e.com" (3.101.11.254), port 5432 failed: FATAL:  password authentication failed for user "pg4e_da795b0640"
+
+labsuser@jupyter:~/week4$ python -c "import hidden; s = hidden.secrets(); print(hidden.__file__); print(s['user'], s['database'])"
+/voc/work/week4/hidden.py
+pg4e_da795b0640 pg4e_da795b0640
+labsuser@jupyter:~/week4$ python load_missing_pokemon.py
+  File "/voc/work/week4/load_missing_pokemon.py", line 19
+    try:
+        ^
+IndentationError: unindent does not match any outer indentation level
+labsuser@jupyter:~/week4$ python load_missing_pokemon.py
+Personal PostgreSQL password: 
+Found 707 Pokémon to add.
+Traceback (most recent call last):
+  File "/voc/work/week4/load_missing_pokemon.py", line 46, in <module>
+    main()
+  File "/voc/work/week4/load_missing_pokemon.py", line 32, in main
+    cur.execute(
+psycopg2.errors.UndefinedColumn: column "url" of relation "pokeapi" does not exist
+LINE 1: INSERT INTO pokeapi (url, body) VALUES ('https://pokeapi.co/...
+                             ^
+
+labsuser@jupyter:~/week4$ python load_missing_pokemon.py
+Personal PostgreSQL password: 
+Traceback (most recent call last):
+  File "/voc/work/week4/load_missing_pokemon.py", line 47, in <module>
+    main()
+  File "/voc/work/week4/load_missing_pokemon.py", line 22, in main
+    (Json(response.json()),),)
+          ^^^^^^^^
+UnboundLocalError: cannot access local variable 'response' where it is not associated with a value
+labsuser@jupyter:~/week4$ cd /voc/work/week4 && python load_missing_pokemon.py
+Personal PostgreSQL password: 
+Found 707 Pokémon to add.
+Saved Pokémon 101
+Saved Pokémon 102
+Saved Pokémon 103
+Saved Pokémon 104
+Saved Pokémon 105
+Saved Pokémon 106
+Saved Pokémon 107
+Saved Pokémon 108
+Saved Pokémon 109
+Saved Pokémon 110
+Saved Pokémon 111
+Saved Pokémon 112
+Saved Pokémon 113
+Saved Pokémon 114
+Saved Pokémon 115
+Saved Pokémon 116
+Saved Pokémon 117
+Saved Pokémon 118
+Saved Pokémon 119
+Saved Pokémon 120
+Saved Pokémon 121
+Saved Pokémon 122
+Saved Pokémon 123
+Saved Pokémon 124
+Saved Pokémon 125
+Saved Pokémon 126
+Saved Pokémon 127
+Saved Pokémon 128
+Saved Pokémon 129
+Saved Pokémon 130
+Saved Pokémon 131
+Saved Pokémon 132
+Saved Pokémon 133
+Saved Pokémon 134
+Saved Pokémon 135
+Saved Pokémon 136
+Saved Pokémon 137
+Saved Pokémon 138
+Saved Pokémon 139
+Saved Pokémon 140
+Saved Pokémon 141
+Saved Pokémon 142
+Saved Pokémon 143
+Saved Pokémon 144
+Saved Pokémon 145
+Saved Pokémon 146
+Saved Pokémon 147
+Saved Pokémon 148
+Saved Pokémon 149
+Saved Pokémon 150
+Saved Pokémon 151
+Saved Pokémon 152
+Saved Pokémon 153
+Saved Pokémon 154
+Saved Pokémon 155
+Saved Pokémon 156
+Saved Pokémon 157
+Saved Pokémon 158
+Saved Pokémon 159
+Saved Pokémon 160
+Saved Pokémon 161
+Saved Pokémon 162
+Saved Pokémon 163
+Saved Pokémon 164
+Saved Pokémon 165
+Saved Pokémon 166
+Saved Pokémon 167
+Saved Pokémon 168
+Saved Pokémon 169
+Saved Pokémon 170
+Saved Pokémon 171
+Saved Pokémon 172
+Saved Pokémon 173
+Saved Pokémon 174
+Saved Pokémon 175
+Saved Pokémon 176
+Saved Pokémon 177
+Saved Pokémon 178
+Saved Pokémon 179
+Saved Pokémon 180
+Saved Pokémon 181
+Saved Pokémon 182
+Saved Pokémon 183
+Saved Pokémon 184
+Saved Pokémon 185
+Saved Pokémon 186
+Saved Pokémon 187
+Saved Pokémon 188
+Saved Pokémon 189
+Saved Pokémon 190
+Saved Pokémon 191
+Saved Pokémon 192
+Saved Pokémon 193
+Saved Pokémon 194
+Saved Pokémon 195
+Saved Pokémon 196
+Saved Pokémon 197
+Saved Pokémon 198
+Saved Pokémon 199
+Saved Pokémon 200
+Saved Pokémon 201
+Saved Pokémon 202
+Saved Pokémon 203
+Saved Pokémon 204
+Saved Pokémon 205
+Saved Pokémon 206
+Saved Pokémon 207
+Saved Pokémon 208
+Saved Pokémon 209
+Saved Pokémon 210
+Saved Pokémon 211
+Saved Pokémon 212
+Saved Pokémon 213
+Saved Pokémon 214
+Saved Pokémon 215
+Saved Pokémon 216
+Saved Pokémon 217
+Saved Pokémon 218
+Saved Pokémon 219
+Saved Pokémon 220
+Saved Pokémon 221
+Saved Pokémon 222
+Saved Pokémon 223
+Saved Pokémon 224
+Saved Pokémon 225
+Saved Pokémon 226
+Saved Pokémon 227
+Saved Pokémon 228
+Saved Pokémon 229
+Saved Pokémon 230
+Saved Pokémon 231
+Saved Pokémon 232
+Saved Pokémon 233
+Saved Pokémon 234
+Saved Pokémon 235
+Saved Pokémon 236
+Saved Pokémon 237
+Saved Pokémon 238
+Saved Pokémon 239
+Saved Pokémon 240
+Saved Pokémon 241
+Saved Pokémon 242
+Saved Pokémon 243
+Saved Pokémon 244
+Saved Pokémon 245
+Saved Pokémon 246
+Saved Pokémon 247
+Saved Pokémon 248
+Saved Pokémon 249
+Saved Pokémon 250
+Saved Pokémon 251
+Saved Pokémon 252
+Saved Pokémon 253
+Saved Pokémon 254
+Saved Pokémon 255
+Saved Pokémon 256
+Saved Pokémon 257
+Saved Pokémon 258
+Saved Pokémon 259
+Saved Pokémon 260
+Saved Pokémon 261
+Saved Pokémon 262
+Saved Pokémon 263
+Saved Pokémon 264
+Saved Pokémon 265
+Saved Pokémon 266
+Saved Pokémon 267
+Saved Pokémon 268
+Saved Pokémon 269
+Saved Pokémon 270
+Saved Pokémon 271
+Saved Pokémon 272
+Saved Pokémon 273
+Saved Pokémon 274
+Saved Pokémon 275
+Saved Pokémon 276
+Saved Pokémon 277
+Saved Pokémon 278
+Saved Pokémon 279
+Saved Pokémon 280
+Saved Pokémon 281
+Saved Pokémon 282
+Saved Pokémon 283
+Saved Pokémon 284
+Saved Pokémon 285
+Saved Pokémon 286
+Saved Pokémon 287
+Saved Pokémon 288
+Saved Pokémon 289
+Saved Pokémon 290
+Saved Pokémon 291
+Saved Pokémon 292
+Saved Pokémon 293
+Saved Pokémon 294
+Saved Pokémon 295
+Saved Pokémon 296
+Saved Pokémon 297
+Saved Pokémon 298
+Saved Pokémon 299
+Saved Pokémon 300
+Saved Pokémon 301
+Saved Pokémon 302
+Saved Pokémon 303
+Saved Pokémon 304
+Saved Pokémon 305
+Saved Pokémon 306
+Saved Pokémon 307
+Saved Pokémon 308
+Saved Pokémon 309
+Saved Pokémon 310
+Saved Pokémon 311
+Saved Pokémon 312
+Saved Pokémon 313
+Saved Pokémon 314
+Saved Pokémon 315
+Saved Pokémon 316
+Saved Pokémon 317
+Saved Pokémon 318
+Saved Pokémon 319
+Saved Pokémon 320
+Saved Pokémon 321
+Saved Pokémon 322
+Saved Pokémon 323
+Saved Pokémon 324
+Saved Pokémon 325
+Saved Pokémon 326
+Saved Pokémon 327
+Saved Pokémon 328
+Saved Pokémon 329
+Saved Pokémon 330
+Saved Pokémon 331
+Saved Pokémon 332
+Saved Pokémon 333
+Saved Pokémon 334
+Saved Pokémon 335
+Saved Pokémon 336
+Saved Pokémon 337
+Saved Pokémon 338
+Saved Pokémon 339
+Saved Pokémon 340
+Saved Pokémon 341
+Saved Pokémon 342
+Saved Pokémon 343
+Saved Pokémon 344
+Saved Pokémon 345
+Saved Pokémon 346
+Saved Pokémon 347
+Saved Pokémon 348
+Saved Pokémon 349
+Saved Pokémon 350
+Saved Pokémon 351
+Saved Pokémon 352
+Saved Pokémon 353
+Saved Pokémon 354
+Saved Pokémon 355
+Saved Pokémon 356
+Saved Pokémon 357
+Saved Pokémon 358
+Saved Pokémon 359
+Saved Pokémon 360
+Saved Pokémon 361
+Saved Pokémon 362
+Saved Pokémon 363
+Saved Pokémon 364
+Saved Pokémon 365
+Saved Pokémon 366
+Saved Pokémon 367
+Saved Pokémon 368
+Saved Pokémon 369
+Saved Pokémon 370
+Saved Pokémon 371
+Saved Pokémon 372
+Saved Pokémon 373
+Saved Pokémon 374
+Saved Pokémon 375
+Saved Pokémon 376
+Saved Pokémon 377
+Saved Pokémon 378
+Saved Pokémon 379
+Saved Pokémon 380
+Saved Pokémon 381
+Saved Pokémon 382
+Saved Pokémon 383
+Saved Pokémon 384
+Saved Pokémon 385
+Saved Pokémon 386
+Saved Pokémon 387
+Saved Pokémon 388
+Saved Pokémon 389
+Saved Pokémon 390
+Saved Pokémon 391
+Saved Pokémon 392
+Saved Pokémon 393
+Saved Pokémon 394
+Saved Pokémon 395
+Saved Pokémon 396
+Saved Pokémon 397
+Saved Pokémon 398
+Saved Pokémon 399
+Saved Pokémon 400
+Saved Pokémon 401
+Saved Pokémon 402
+Saved Pokémon 403
+Saved Pokémon 404
+Saved Pokémon 405
+Saved Pokémon 406
+Saved Pokémon 407
+Saved Pokémon 408
+Saved Pokémon 409
+Saved Pokémon 410
+Saved Pokémon 411
+Saved Pokémon 412
+Saved Pokémon 413
+Saved Pokémon 414
+Saved Pokémon 415
+Saved Pokémon 416
+Saved Pokémon 417
+Saved Pokémon 418
+Saved Pokémon 419
+Saved Pokémon 420
+Saved Pokémon 421
+Saved Pokémon 422
+Saved Pokémon 423
+Saved Pokémon 424
+Saved Pokémon 425
+Saved Pokémon 426
+Saved Pokémon 427
+Saved Pokémon 428
+Saved Pokémon 429
+Saved Pokémon 430
+Saved Pokémon 431
+Saved Pokémon 432
+Saved Pokémon 433
+Saved Pokémon 434
+Saved Pokémon 435
+Saved Pokémon 436
+Saved Pokémon 437
+Saved Pokémon 438
+Saved Pokémon 439
+Saved Pokémon 440
+Saved Pokémon 441
+Saved Pokémon 442
+Saved Pokémon 443
+Saved Pokémon 444
+Saved Pokémon 445
+Saved Pokémon 446
+Saved Pokémon 447
+Saved Pokémon 448
+Saved Pokémon 449
+Saved Pokémon 450
+Saved Pokémon 451
+Saved Pokémon 452
+Saved Pokémon 453
+Saved Pokémon 454
+Saved Pokémon 455
+Saved Pokémon 456
+Saved Pokémon 457
+Saved Pokémon 458
+Saved Pokémon 459
+Saved Pokémon 460
+Saved Pokémon 461
+Saved Pokémon 462
+Saved Pokémon 463
+Saved Pokémon 464
+Saved Pokémon 465
+Saved Pokémon 466
+Saved Pokémon 467
+Saved Pokémon 468
+Saved Pokémon 469
+Saved Pokémon 470
+Saved Pokémon 471
+Saved Pokémon 472
+Saved Pokémon 473
+Saved Pokémon 474
+Saved Pokémon 475
+Saved Pokémon 476
+Saved Pokémon 477
+Saved Pokémon 478
+Saved Pokémon 479
+Saved Pokémon 480
+Saved Pokémon 481
+Saved Pokémon 482
+Saved Pokémon 483
+Saved Pokémon 484
+Saved Pokémon 485
+Saved Pokémon 486
+Saved Pokémon 487
+Saved Pokémon 488
+Saved Pokémon 489
+Saved Pokémon 490
+Saved Pokémon 491
+Saved Pokémon 492
+Saved Pokémon 493
+Saved Pokémon 494
+Saved Pokémon 495
+Saved Pokémon 496
+Saved Pokémon 497
+Saved Pokémon 498
+Saved Pokémon 499
+Saved Pokémon 500
+Saved Pokémon 501
+Saved Pokémon 502
+Saved Pokémon 503
+Saved Pokémon 504
+Saved Pokémon 505
+Saved Pokémon 506
+Saved Pokémon 507
+Saved Pokémon 508
+Saved Pokémon 509
+Saved Pokémon 510
+Saved Pokémon 511
+Saved Pokémon 512
+Saved Pokémon 513
+Saved Pokémon 514
+Saved Pokémon 515
+Saved Pokémon 516
+Saved Pokémon 517
+Saved Pokémon 518
+Saved Pokémon 519
+Saved Pokémon 520
+Saved Pokémon 521
+Saved Pokémon 522
+Saved Pokémon 523
+Saved Pokémon 524
+Saved Pokémon 525
+Saved Pokémon 526
+Saved Pokémon 527
+Saved Pokémon 528
+Saved Pokémon 529
+Saved Pokémon 530
+Saved Pokémon 531
+Saved Pokémon 532
+Saved Pokémon 533
+Saved Pokémon 534
+Saved Pokémon 535
+Saved Pokémon 536
+Saved Pokémon 537
+Saved Pokémon 538
+Saved Pokémon 539
+Saved Pokémon 540
+Saved Pokémon 541
+Saved Pokémon 542
+Saved Pokémon 543
+Saved Pokémon 544
+Saved Pokémon 545
+Saved Pokémon 546
+Saved Pokémon 547
+Saved Pokémon 548
+Saved Pokémon 549
+Saved Pokémon 550
+Saved Pokémon 551
+Saved Pokémon 552
+Saved Pokémon 553
+Saved Pokémon 554
+Saved Pokémon 555
+Saved Pokémon 556
+Saved Pokémon 557
+Saved Pokémon 558
+Saved Pokémon 559
+Saved Pokémon 560
+Saved Pokémon 561
+Saved Pokémon 562
+Saved Pokémon 563
+Saved Pokémon 564
+Saved Pokémon 565
+Saved Pokémon 566
+Saved Pokémon 567
+Saved Pokémon 568
+Saved Pokémon 569
+Saved Pokémon 570
+Saved Pokémon 571
+Saved Pokémon 572
+Saved Pokémon 573
+Saved Pokémon 574
+Saved Pokémon 575
+Saved Pokémon 576
+Saved Pokémon 577
+Saved Pokémon 578
+Saved Pokémon 579
+Saved Pokémon 580
+Saved Pokémon 581
+Saved Pokémon 582
+Saved Pokémon 583
+Saved Pokémon 584
+Saved Pokémon 585
+Saved Pokémon 586
+Saved Pokémon 587
+Saved Pokémon 588
+Saved Pokémon 589
+Saved Pokémon 590
+Saved Pokémon 591
+Saved Pokémon 592
+Saved Pokémon 593
+Saved Pokémon 594
+Saved Pokémon 595
+Saved Pokémon 596
+Saved Pokémon 597
+Saved Pokémon 598
+Saved Pokémon 599
+Saved Pokémon 600
+Saved Pokémon 601
+Saved Pokémon 602
+Saved Pokémon 603
+Saved Pokémon 604
+Saved Pokémon 605
+Saved Pokémon 606
+Saved Pokémon 607
+Saved Pokémon 608
+Saved Pokémon 609
+Saved Pokémon 610
+Saved Pokémon 611
+Saved Pokémon 612
+Saved Pokémon 613
+Saved Pokémon 614
+Saved Pokémon 615
+Saved Pokémon 616
+Saved Pokémon 617
+Saved Pokémon 618
+Saved Pokémon 619
+Saved Pokémon 620
+Saved Pokémon 621
+Saved Pokémon 622
+Saved Pokémon 623
+Saved Pokémon 624
+Saved Pokémon 625
+Saved Pokémon 626
+Saved Pokémon 627
+Saved Pokémon 628
+Saved Pokémon 629
+Saved Pokémon 630
+Saved Pokémon 631
+Saved Pokémon 632
+Saved Pokémon 633
+Saved Pokémon 634
+Saved Pokémon 635
+Saved Pokémon 636
+Saved Pokémon 637
+Saved Pokémon 638
+Saved Pokémon 639
+Saved Pokémon 640
+Saved Pokémon 641
+Saved Pokémon 642
+Saved Pokémon 643
+Saved Pokémon 644
+Saved Pokémon 645
+Saved Pokémon 646
+Saved Pokémon 647
+Saved Pokémon 648
+Saved Pokémon 649
+Saved Pokémon 650
+Saved Pokémon 651
+Saved Pokémon 652
+Saved Pokémon 653
+Saved Pokémon 654
+Saved Pokémon 655
+Saved Pokémon 656
+Saved Pokémon 657
+Saved Pokémon 658
+Saved Pokémon 659
+Saved Pokémon 660
+Saved Pokémon 661
+Saved Pokémon 662
+Saved Pokémon 663
+Saved Pokémon 664
+Saved Pokémon 665
+Saved Pokémon 666
+Saved Pokémon 667
+Saved Pokémon 668
+Saved Pokémon 669
+Saved Pokémon 670
+Saved Pokémon 671
+Saved Pokémon 672
+Saved Pokémon 673
+Saved Pokémon 674
+Saved Pokémon 675
+Saved Pokémon 676
+Saved Pokémon 677
+Saved Pokémon 678
+Saved Pokémon 679
+Saved Pokémon 680
+Saved Pokémon 681
+Saved Pokémon 682
+Saved Pokémon 683
+Saved Pokémon 684
+Saved Pokémon 685
+Saved Pokémon 686
+Saved Pokémon 687
+Saved Pokémon 688
+Saved Pokémon 689
+Saved Pokémon 690
+Saved Pokémon 691
+Saved Pokémon 692
+Saved Pokémon 693
+Saved Pokémon 694
+Saved Pokémon 695
+Saved Pokémon 696
+Saved Pokémon 697
+Saved Pokémon 698
+Saved Pokémon 699
+Saved Pokémon 700
+Saved Pokémon 701
+Saved Pokémon 702
+Saved Pokémon 703
+Saved Pokémon 704
+Saved Pokémon 705
+Saved Pokémon 706
+Saved Pokémon 707
+Saved Pokémon 708
+Saved Pokémon 709
+Saved Pokémon 710
+Saved Pokémon 711
+Saved Pokémon 712
+Saved Pokémon 713
+Saved Pokémon 714
+Saved Pokémon 715
+Saved Pokémon 716
+Saved Pokémon 717
+Saved Pokémon 718
+Saved Pokémon 719
+Saved Pokémon 720
+Saved Pokémon 721
+Saved Pokémon 722
+Saved Pokémon 723
+Saved Pokémon 724
+Saved Pokémon 725
+Saved Pokémon 726
+Saved Pokémon 727
+Saved Pokémon 728
+Saved Pokémon 729
+Saved Pokémon 730
+Saved Pokémon 731
+Saved Pokémon 732
+Saved Pokémon 733
+Saved Pokémon 734
+Saved Pokémon 735
+Saved Pokémon 736
+Saved Pokémon 737
+Saved Pokémon 738
+Saved Pokémon 739
+Saved Pokémon 740
+Saved Pokémon 741
+Saved Pokémon 742
+Saved Pokémon 743
+Saved Pokémon 744
+Saved Pokémon 745
+Saved Pokémon 746
+Saved Pokémon 747
+Saved Pokémon 748
+Saved Pokémon 749
+Saved Pokémon 750
+Saved Pokémon 751
+Saved Pokémon 752
+Saved Pokémon 753
+Saved Pokémon 754
+Saved Pokémon 755
+Saved Pokémon 756
+Saved Pokémon 757
+Saved Pokémon 758
+Saved Pokémon 759
+Saved Pokémon 760
+Saved Pokémon 761
+Saved Pokémon 762
+Saved Pokémon 763
+Saved Pokémon 764
+Saved Pokémon 765
+Saved Pokémon 766
+Saved Pokémon 767
+Saved Pokémon 768
+Saved Pokémon 769
+Saved Pokémon 770
+Saved Pokémon 771
+Saved Pokémon 772
+Saved Pokémon 773
+Saved Pokémon 774
+Saved Pokémon 775
+Saved Pokémon 776
+Saved Pokémon 777
+Saved Pokémon 778
+Saved Pokémon 779
+Saved Pokémon 780
+Saved Pokémon 781
+Saved Pokémon 782
+Saved Pokémon 783
+Saved Pokémon 784
+Saved Pokémon 785
+Saved Pokémon 786
+Saved Pokémon 787
+Saved Pokémon 788
+Saved Pokémon 789
+Saved Pokémon 790
+Saved Pokémon 791
+Saved Pokémon 792
+Saved Pokémon 793
+Saved Pokémon 794
+Saved Pokémon 795
+Saved Pokémon 796
+Saved Pokémon 797
+Saved Pokémon 798
+Saved Pokémon 799
+Saved Pokémon 800
+Saved Pokémon 801
+Saved Pokémon 802
+Saved Pokémon 803
+Saved Pokémon 804
+Saved Pokémon 805
+Saved Pokémon 806
+Saved Pokémon 807
+Final row count: 807
+labsuser@jupyter:~/week4$ python -u load_missing_pokemon.py 2>&1 | tee -a pokemon_load.log
+Personal PostgreSQL password: 
+Found 0 Pokémon to add.
+Final row count: 807
+labsuser@jupyter:~/week4$ ^C
+labsuser@jupyter:~/week4$ python -c 'from getpass import getpass; from runpy import run_path; s = run_path("/voc/work/week4/hidden.py")["secrets"](); print(s["pass"] == getpass("Enter the password that worked in psql: "))'
+Enter the password that worked in psql: 
+False
+labsuser@jupyter:~/week4$ cd /voc/work/week4
+python - <<'PY'
+import os
+from getpass import getpass
+from pathlib import Path
+
+password = getpass("Personal PostgreSQL password: ")
+escaped = password.replace("\\", "\\\\").replace(":", "\\:")
+os.umask(0o077)
+path = Path(".pgpass_pokejson")
+with path.open("w") as file:
+    os.fchmod(file.fileno(), 0o600)
+    file.write(f"pg.pg4e.com:5432:pg4e_da795b0640:pg4e_da795b0640:{escaped}\n")
+PY
+Personal PostgreSQL password: 
+labsuser@jupyter:~/week4$ 
